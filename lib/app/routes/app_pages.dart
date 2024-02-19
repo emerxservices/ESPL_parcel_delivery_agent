@@ -28,7 +28,6 @@ import '../modules/pickup_parcel/bindings/pickup_parcel_binding.dart';
 import '../modules/pickup_parcel/views/pickup_parcel_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/loggedin_change_password_view.dart';
-import '../modules/profile/views/loggedin_change_password_view.dart';
 import '../modules/profile/views/loggedin_verify_change_password_view.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/profile_setup/bindings/profile_setup_binding.dart';

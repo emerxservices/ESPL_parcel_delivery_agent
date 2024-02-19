@@ -97,100 +97,94 @@ class Sidemenu extends StatelessWidget {
 
           //Bottom list item
           Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 10.0,
-                    ),
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: 10.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 18.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 18.0),
-                          child: Column(
-                            children: [
-                              SidemenuItem(
-                                goto: Routes.MY_ORDERS,
-                                title: 'myOrders'.tr,
-                                icon: Icons.history,
-                              ),
-                              SidemenuItem(
-                                goto: Routes.MY_EARNINGS,
-                                title: 'myEarnings'.tr,
-                                icon: Icons.attach_money,
-                              ),
-
-                              SidemenuItem(
-                                goto: Routes.NOTIFICATIONS,
-                                title: 'notification'.tr,
-                                icon: Icons.notifications_none,
-                              ),
-                              // SizedBox(
-                              //   child: Container(
-                              //     height: 1,
-                              //     color: Color(0xFFCCCCCC),
-                              //   ),
-                              // ),
-                              // SidemenuItem(
-                              //   goto: Settings(),
-                              //   title: AppLocalizations.of(context)!.settings,
-                              //   icon: Icons.settings,
-                              // ),
-                            ],
-                          ),
+                        SidemenuItem(
+                          goto: Routes.MY_ORDERS,
+                          title: 'myOrders'.tr,
+                          icon: Icons.history,
                         ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 18),
-                          child: ListTile(
-                            contentPadding: EdgeInsets.zero,
-                            title: Transform.translate(
-                              offset: Offset(-16, 0),
-                              child: Text(
-                                "logout".tr,
-                                style: kText18w700,
-                              ),
-                            ),
-                            leading: const Icon(
-                              Icons.logout,
-                              color: orangePrimary,
-                              size: 24,
-                            ),
-                            onTap: () {
-                              controller.onLogout();
-                            },
-                          ),
-                        )
-                        // GestureDetector(
-                        //   onTap: () {
-                        //     controller.onLogout();
-                        //
-                        //     // onLogout();
-                        //   },
+                        SidemenuItem(
+                          goto: Routes.MY_EARNINGS,
+                          title: 'myEarnings'.tr,
+                          icon: Icons.attach_money,
+                        ),
+          
+                        SidemenuItem(
+                          goto: Routes.NOTIFICATIONS,
+                          title: 'notification'.tr,
+                          icon: Icons.notifications_none,
+                        ),
+                        // SizedBox(
                         //   child: Container(
-                        //     padding: const EdgeInsets.all(18.0),
-                        //     decoration: const BoxDecoration(
-                        //       gradient: LinearGradient(
-                        //           stops: [0.025, 0.025],
-                        //           colors: [orangePrimary, lightOrange]),
-                        //       borderRadius: BorderRadius.only(
-                        //         topLeft: Radius.circular(5.0),
-                        //         bottomLeft: Radius.circular(5.0),
-                        //       ),
-                        //     ),
-                        //     child: Text(
-                        //       'logout'.tr,
-                        //       style: kText18w700,
-                        //     ),
+                        //     height: 1,
+                        //     color: Color(0xFFCCCCCC),
                         //   ),
-                        // )
+                        // ),
+                        // SidemenuItem(
+                        //   goto: Settings(),
+                        //   title: AppLocalizations.of(context)!.settings,
+                        //   icon: Icons.settings,
+                        // ),
                       ],
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 18),
+                    child: ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Transform.translate(
+                        offset: Offset(-16, 0),
+                        child: Text(
+                          "logout".tr,
+                          style: kText18w700,
+                        ),
+                      ),
+                      leading: const Icon(
+                        Icons.logout,
+                        color: orangePrimary,
+                        size: 24,
+                      ),
+                      onTap: () {
+                        controller.onLogout();
+                      },
+                    ),
+                  )
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     controller.onLogout();
+                  //
+                  //     // onLogout();
+                  //   },
+                  //   child: Container(
+                  //     padding: const EdgeInsets.all(18.0),
+                  //     decoration: const BoxDecoration(
+                  //       gradient: LinearGradient(
+                  //           stops: [0.025, 0.025],
+                  //           colors: [orangePrimary, lightOrange]),
+                  //       borderRadius: BorderRadius.only(
+                  //         topLeft: Radius.circular(5.0),
+                  //         bottomLeft: Radius.circular(5.0),
+                  //       ),
+                  //     ),
+                  //     child: Text(
+                  //       'logout'.tr,
+                  //       style: kText18w700,
+                  //     ),
+                  //   ),
+                  // )
+                ],
+              ),
             ),
           ),
         ],

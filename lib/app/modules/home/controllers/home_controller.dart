@@ -271,7 +271,7 @@ class HomeController extends NetworkClient {
         location.onLocationChanged.listen((LocationData currentLocation) async {
       locationUpdateCounter++;
       print('================$locationUpdateCounter================');
-      if ((locationUpdateCounter % 25 == 0) || (locationUpdateCounter == 1)) {
+      if ((locationUpdateCounter % 5 == 0) || (locationUpdateCounter == 1)) {
         updateGeoLocation(
             currentLocation.latitude!, currentLocation.longitude!);
       }
@@ -348,7 +348,7 @@ class HomeController extends NetworkClient {
     });
   }
 
-  void onLogout() async {
+  void onLogout() {
     // await SessionManager().onLogout();
     // locationSubscription!.cancel();
     // mapController.dispose();
@@ -363,7 +363,6 @@ class HomeController extends NetworkClient {
 
   checkIsOngoingBooking() async {
     bool? IsOngoingBooking = false;
-
     Map<String, Object> data = {};
     data[ApiParams.status] = "Active";
     data[ApiParams.skip] = 0;
@@ -383,7 +382,8 @@ class HomeController extends NetworkClient {
         return false;
       }
     }).catchError((onError) {
-      print(onError);
+     print(onError
+     );
     });
 
     return IsOngoingBooking;

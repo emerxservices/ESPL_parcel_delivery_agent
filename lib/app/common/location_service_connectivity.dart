@@ -87,6 +87,8 @@ class LocationServiceConnectivity extends NetworkClient {
     bool? checkIsOnlineResp = false;
     OnlineStatusResponse onlineStatusResponse;
 
+    print('=====================================');
+
     await get(ApiEndPoints.getOnlineStatus, data).then((value) {
       onlineStatusResponse = onlineStatusResponseFromJson(value.toString());
 

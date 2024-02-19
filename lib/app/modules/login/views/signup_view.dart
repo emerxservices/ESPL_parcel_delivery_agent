@@ -64,6 +64,7 @@ class SignupView extends GetView<LoginController> {
                         //First name lastname
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
                               child: TextInputBox(
@@ -115,6 +116,7 @@ class SignupView extends GetView<LoginController> {
                         Seperator(),
                         //Phone number
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomBox(
                               child: Row(
@@ -257,8 +259,8 @@ class SignupView extends GetView<LoginController> {
                           child: ButtonPrimary(
                               onPress: () {
                                 if (_formKey.currentState!.validate()) {
-                                  controller.register();
-
+                                  controller
+                                      .validatePassword(controller.register());
                                   print('Pressed registration page 1');
                                 }
                               },

@@ -273,7 +273,7 @@ class MyEarningsView extends GetView<MyEarningsController> {
                                             overflow: TextOverflow.ellipsis,
                                             style: kText16w400.copyWith(
                                                 fontWeight: FontWeight.w500,
-                                                color: Colors.white),
+                                                color: Colors.black),
                                           ),
                                         )),
                                     Container(
@@ -289,7 +289,7 @@ class MyEarningsView extends GetView<MyEarningsController> {
                                           overflow: TextOverflow.ellipsis,
                                           style: kText16w400.copyWith(
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.white),
+                                              color: Colors.black),
                                         ),
                                       ),
                                     ),
@@ -304,7 +304,7 @@ class MyEarningsView extends GetView<MyEarningsController> {
                                           overflow: TextOverflow.ellipsis,
                                           style: kText16w400.copyWith(
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.white),
+                                              color: Colors.black),
                                         ),
                                       ),
                                     )

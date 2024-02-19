@@ -121,6 +121,17 @@ class LoginController extends NetworkClient {
     confirmNewPasswordInputController.text = "";
   }
 
+  validatePassword(VoidCallback function) {
+    if (passwordInputController.text.isEmpty ||
+        passwordInputController.text.isEmpty) {
+      CustomToast.show('All fields are compulsory');
+    } else if (passwordInputController.text != confirmPasswordInputController.text) {
+      CustomToast.show('Password and confirm password doesn\'t match');
+    } else {
+      function; // Get.back();
+    }
+  }
+
   register() async {
     Map<String, Object> data = {};
     data[ApiParams.firstname] = firstNameInputController.text.toString();
@@ -128,7 +139,7 @@ class LoginController extends NetworkClient {
     data[ApiParams.email] = emailInputController.text.toString();
     data[ApiParams.countrycode] = countryCodeController.text.toString();
     data[ApiParams.phone] = numberInputController.text.toString();
-    data[ApiParams.password] = passwordInputController.text.toString();
+    data[ApiParams.password] = confirmPasswordInputController.text.toString();
 
     RegistrationResponse registrationResponse;
     loading.value = true;
