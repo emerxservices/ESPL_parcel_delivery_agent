@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:espl_parcel_driver/app/components/customToast.dart';
 import 'package:espl_parcel_driver/app/models/booking_response.dart';
 import 'package:espl_parcel_driver/app/models/online_status_response.dart';
@@ -27,7 +29,9 @@ class SplashController extends NetworkClient {
   @override
   void onReady() {
     super.onReady();
-    handleRouteChange();
+    Timer(Duration(seconds: 3), () {
+      handleRouteChange();
+    });
     print("ONREADY CALLED");
   }
 
@@ -38,12 +42,14 @@ class SplashController extends NetworkClient {
   }
 
   handleRouteChange() async {
-    isLoggedIn.value = await SessionManager().getBoolean(SessionManager.isLogin);
+    isLoggedIn.value =
+        await SessionManager().getBoolean(SessionManager.isLogin);
     // Get.offAllNamed(Routes.LOGIN);
 
     if (isLoggedIn.value == true) {
       if (await checkIsProfileSet() == true) {
-        if (await checkIsOnline() == true && await checkIsOngoingBooking() == true) {
+        if (await checkIsOnline() == true &&
+            await checkIsOngoingBooking() == true) {
           Get.offAllNamed(Routes.ONGOING_ORDER);
         } else if (await checkIsOnline() == true) {
           Get.offAllNamed(Routes.ALL_ORDERS);
@@ -64,7 +70,8 @@ class SplashController extends NetworkClient {
     CheckIsProfileSetResponse checkIsProfileSetResponse;
 
     await get(ApiEndPoints.isDriverProfileSet, data).then((value) async {
-      checkIsProfileSetResponse = checkIsProfileSetResponseFromJson(value.toString());
+      checkIsProfileSetResponse =
+          checkIsProfileSetResponseFromJson(value.toString());
 
       if (checkIsProfileSetResponse.status == 200) {
         isProfileSetResp = checkIsProfileSetResponse.data?.diverProfileIsSet;
@@ -115,7 +122,8 @@ class SplashController extends NetworkClient {
       bookingsResponse = bookingsResponseFromJson(value.toString());
 
       if (bookingsResponse.status == 200) {
-        IsOngoingBooking = (bookingsResponse.data?.totalcount)! > 0 ? true : false;
+        IsOngoingBooking =
+            (bookingsResponse.data?.totalcount)! > 0 ? true : false;
         print(bookingsResponse.data?.bookings);
         return IsOngoingBooking;
       } else {
