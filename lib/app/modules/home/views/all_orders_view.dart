@@ -69,7 +69,7 @@ class AllOrdersView extends GetView<HomeController> {
                   : Center(
                       child: Text(
                         'noOrdersFound'.tr,
-                        style: kText18w700.copyWith(color: Colors.white),
+                        style: kText18w700,
                       ),
                     )),
       floatingActionButton: FloatingActionButton(

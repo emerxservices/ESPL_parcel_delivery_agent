@@ -1,3 +1,4 @@
+import 'package:espl_parcel_driver/app/components/customToast.dart';
 import 'package:espl_parcel_driver/app/components/sidemenuItem.dart';
 import 'package:espl_parcel_driver/app/modules/home/controllers/home_controller.dart';
 import 'package:espl_parcel_driver/app/routes/app_pages.dart';
@@ -119,7 +120,7 @@ class Sidemenu extends StatelessWidget {
                           title: 'myEarnings'.tr,
                           icon: Icons.attach_money,
                         ),
-          
+
                         SidemenuItem(
                           goto: Routes.NOTIFICATIONS,
                           title: 'notification'.tr,
@@ -156,7 +157,11 @@ class Sidemenu extends StatelessWidget {
                         size: 24,
                       ),
                       onTap: () {
-                        controller.onLogout();
+                        if (controller.onlineStatus.value) {
+                          CustomToast.show('Please set offline');
+                        } else {
+                          controller.onLogout();
+                        }
                       },
                     ),
                   )

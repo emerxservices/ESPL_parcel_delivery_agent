@@ -357,6 +357,7 @@ class HomeController extends NetworkClient {
     locationSubscription!.cancel().then((_) async {
       await SessionManager().onLogout();
       mapController.dispose();
+      CustomToast.show('loggedOut'.tr);
       Get.offAllNamed(Routes.LOGIN);
     });
   }

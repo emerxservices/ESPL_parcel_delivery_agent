@@ -70,6 +70,7 @@ class Languages extends Translations {
           "home": "Home",
           "online": "Online",
           "logout": "Log Out",
+          "loggedOut":"Logged Out Successfully",
           "youROffline": "You’re Offline",
           "youROnline": "You’re Online",
           "goOnline": "Go Online",

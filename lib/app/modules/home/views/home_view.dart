@@ -15,14 +15,12 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: CustomAppbar(
         title: "home".tr,
-        
         onlineStatus: controller.onlineStatus,
         onSwitchPress: (val) {
           controller.onlineStatus.value = val;
           controller.setOnlineStatus();
         },
-        onLeadingIconPress: () {
-        },
+        onLeadingIconPress: () {},
       ),
       drawer: Sidemenu(controller: controller),
       body: Stack(
